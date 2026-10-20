@@ -1,173 +1,301 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0a0714">
-  <title>GLVVIP Birthday Room</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="crt" aria-hidden="true"></div>
+<html>
+  <head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font:
+          14px -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: #fff;
+        color: #000;
+      }
+      img {
+        max-width: 100%;
+      }
+      [hidden]:not([hidden="until-found" i]) {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#0a0714" />
+        <title>GLVVIP Birthday Room</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+      </head>
+      <body>
+        <div class="crt" aria-hidden="true"></div>
 
-  <!-- ===== LOGIN (compshop style) ===== -->
-  <section class="boot" id="boot">
-    <div class="login">
-      <div class="logo">GL</div>
-      <p class="logo-sub">INTERNET CAFE &bull; VIP ROOM</p>
-      <div class="field"><label>USER ID</label><div class="input">GLVVIP</div></div>
-      <div class="field"><label>PASSWORD</label><div class="input" id="pw"></div></div>
-      <button class="btn" id="login-btn">&#9654; LOG IN</button>
-      <div class="loading" id="loading" hidden>
-        <div class="bar"><i id="bar-fill"></i></div>
-        <p id="load-text">Connecting to GLVVIP server...</p>
-      </div>
-      <p class="login-foot">Session type: <b>BIRTHDAY</b> &nbsp;|&nbsp; Time left: <b>&infin;</b></p>
-    </div>
-  </section>
-
-  <!-- ===== LAUNCHER ===== -->
-  <div class="app" id="app" hidden>
-    <header class="top">
-      <div class="top-logo"><b>GL</b> // VIP ROOM</div>
-      <div class="chips">
-        <span class="chip">PLAYER: <b id="player-name">ANGEL</b></span>
-        <span class="chip hp">HP <b>&hearts;&hearts;&hearts;&hearts;&hearts;</b></span>
-        <span class="chip xp">XP <b id="xp">0</b>/3</span>
-      </div>
-    </header>
-
-    <nav class="side" id="side">
-      <button class="tab active" data-tab="home"><i>&#127968;</i><span>HOME</span></button>
-      <button class="tab" data-tab="replays"><i>&#127916;</i><span>REPLAYS</span></button>
-      <button class="tab" data-tab="shots"><i>&#128248;</i><span>SCREENSHOTS</span></button>
-      <button class="tab" data-tab="chat"><i>&#128172;</i><span>LOBBY CHAT</span></button>
-      <button class="tab locked" data-tab="levelup" id="tab-levelup"><i>&#128274;</i><span>LEVEL UP</span></button>
-    </nav>
-
-    <main class="view">
-      <!-- HOME -->
-      <section class="panel active" id="home">
-        <div class="banner">
-          <div class="portrait"><div class="p-frame"><img src="assets/photos/angel.jpg" alt="Angel"></div><span>P1 &hearts; ANGEL</span></div>
-          <p class="tag">NEW SESSION STARTED</p>
-          <h1>HAPPY<br>BIRTHDAY,<br><span id="hero-name">ANGEL</span>!</h1>
-          <p class="sub">Your GLVVIP squad prepared a special session for you. Finish the quests to unlock the secret level.</p>
-          <button class="btn" data-go="replays">&#9654; START WITH REPLAYS</button>
-        </div>
-        <div class="home-side">
-          <div class="vip-card">
-            <div class="vip-top"><b>GL</b><span>VIP MEMBER</span></div>
-            <div class="vip-chip"></div>
-            <div class="vip-name" id="card-name">ANGEL</div>
-            <div class="vip-bot"><span>GLVVIP #0001</span><span>VALID: FOREVER</span></div>
-          </div>
-          <div class="quests">
-            <h3>&#9733; QUESTS</h3>
-            <ul>
-              <li data-q="replays"><i></i> Watch our replays</li>
-              <li data-q="shots"><i></i> Check the screenshots</li>
-              <li data-q="chat"><i></i> Read the lobby chat</li>
-              <li data-q="levelup"><i></i> Unlock the secret level</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- REPLAYS = memory videos -->
-      <section class="panel" id="replays">
-        <div class="ph-head"><p class="tag">TAB 01</p><h2>REPLAYS</h2><p>Our best matches. Press play and remember.</p></div>
-        <div class="replay-layout">
-          <div class="tv" id="tv">
-            <video id="player" playsinline controls preload="metadata" hidden></video>
-            <div class="tv-empty" id="tv-empty">
-              <button class="play-big" id="play-big" aria-label="Play">&#9654;</button>
-              <p id="tv-hint">Memory video goes here</p>
+        <!-- ===== LOGIN (compshop style) ===== -->
+        <section class="boot" id="boot">
+          <div class="login">
+            <div class="logo">GL</div>
+            <p class="logo-sub">INTERNET CAFE &bull; VIP ROOM</p>
+            <div class="field">
+              <label>USER ID</label>
+              <div class="input">GLVVIP</div>
             </div>
-            <span class="rec"><i></i> REC</span>
-            <span class="tv-title" id="tv-title">MATCH 01</span>
-            <b class="corner tl"></b><b class="corner tr"></b><b class="corner bl"></b><b class="corner br"></b>
-          </div>
-          <ol class="matches" id="matches"></ol>
-        </div>
-      </section>
-
-      <!-- SCREENSHOTS = photos -->
-      <section class="panel" id="shots">
-        <div class="ph-head"><p class="tag">TAB 02</p><h2>SCREENSHOTS</h2><p>Proof we were there. Tap to enlarge.</p></div>
-        <div class="shots" id="shot-grid"></div>
-      </section>
-
-      <!-- CHAT = messages -->
-      <section class="panel" id="chat">
-        <div class="ph-head"><p class="tag">TAB 03</p><h2>LOBBY CHAT</h2><p>Your GLVVIP squad has something to say.</p></div>
-        <div class="chatbox">
-          <div class="chat-head"><span># glvvip-lobby</span><span class="online">&#9679; <b id="online-n">5</b> online</span></div>
-          <div class="chat-log" id="chat-log"></div>
-        </div>
-      </section>
-
-      <!-- LEVEL UP = letter -->
-      <section class="panel" id="levelup">
-        <div class="lock-msg" id="lock-msg">
-          <div class="big-lock">&#128274;</div>
-          <h2>LOCKED</h2>
-          <p>Finish the 3 quests first: Replays, Screenshots, and Lobby Chat.</p>
-        </div>
-        <div class="final" id="final" hidden>
-          <div class="lvl-banner">
-            <p class="tag">ACHIEVEMENT UNLOCKED</p>
-            <h2>LEVEL UP!</h2>
-            <div class="xpbar"><i></i></div>
-            <p class="lv">BIRTHDAY LEVEL UNLOCKED &bull; THE SQUAD IS HERE</p>
-          </div>
-
-          <div class="dance-stage" id="stage2">
-            <button class="mute" id="mute-btn" type="button">&#128263; MUSIC OFF</button>
-            <div class="beams" aria-hidden="true"></div>
-            <div class="ring r1" aria-hidden="true"></div><div class="ring r2" aria-hidden="true"></div>
-            <div class="hero">
-              <span class="crown" aria-hidden="true">&#128081;</span>
-              <div class="hero-glow"><div class="hero-frame"><img src="assets/avatars/angel-center.jpg" alt="Angel"></div></div>
-              <div class="hero-name">ANGEL<small>BIRTHDAY BOSS</small></div>
+            <div class="field">
+              <label>PASSWORD</label>
+              <div class="input" id="pw"></div>
             </div>
-          </div>
-
-          <div class="next-quest">
-            <span class="nq-door" aria-hidden="true">&#128682;</span>
-            <div>
-              <p class="tag">NEXT QUEST</p>
-              <p>Enter the apartment. Your real surprise is waiting inside.</p>
+            <button class="btn" id="login-btn">&#9654; LOG IN</button>
+            <div class="loading" id="loading" hidden>
+              <div class="bar"><i id="bar-fill"></i></div>
+              <p id="load-text">Connecting to GLVVIP server...</p>
             </div>
-            <span class="nq-arrow" aria-hidden="true">&#9654;</span>
+            <p class="login-foot">
+              Session type: <b>BIRTHDAY</b> &nbsp;|&nbsp; Time left:
+              <b>&infin;</b>
+            </p>
           </div>
+        </section>
 
-          <div class="letter-card">
-            <p class="tag">LAST MESSAGE</p>
-            <p class="letter" id="letter"></p>
-            <p class="sign">&mdash; your GLVVIP squad &hearts;</p>
-            <button class="btn" id="confetti-btn">&#10024; CELEBRATE</button>
-            <button class="link" id="restart">log out &amp; play again</button>
-          </div>
+        <!-- ===== LAUNCHER ===== -->
+        <div class="app" id="app" hidden>
+          <header class="top">
+            <div class="top-logo"><b>GL</b> // VIP ROOM</div>
+            <div class="chips">
+              <span class="chip">PLAYER: <b id="player-name">ANGEL</b></span>
+              <span class="chip hp"
+                >HP <b>&hearts;&hearts;&hearts;&hearts;&hearts;</b></span
+              >
+              <span class="chip xp">XP <b id="xp">0</b>/3</span>
+            </div>
+          </header>
+
+          <nav class="side" id="side">
+            <button class="tab active" data-tab="home">
+              <i>&#127968;</i><span>HOME</span>
+            </button>
+            <button class="tab" data-tab="replays">
+              <i>&#127916;</i><span>REPLAYS</span>
+            </button>
+            <button class="tab" data-tab="shots">
+              <i>&#128248;</i><span>SCREENSHOTS</span>
+            </button>
+            <button class="tab" data-tab="chat">
+              <i>&#128172;</i><span>LOBBY CHAT</span>
+            </button>
+            <button class="tab locked" data-tab="levelup" id="tab-levelup">
+              <i>&#128274;</i><span>LEVEL UP</span>
+            </button>
+          </nav>
+
+          <main class="view">
+            <!-- HOME -->
+            <section class="panel active" id="home">
+              <div class="banner">
+                <div class="portrait">
+                  <div class="p-frame">
+                    <img src="assets/photos/angel.jpg" alt="Angel" />
+                  </div>
+                  <span>P1 &hearts; ANGEL</span>
+                </div>
+                <p class="tag">NEW SESSION STARTED</p>
+                <h1>
+                  HAPPY<br />BIRTHDAY,<br /><span id="hero-name">ANGEL</span>!
+                </h1>
+                <p class="sub">
+                  Your GLVVIP squad prepared a special session for you. Finish
+                  the quests to unlock the secret level.
+                </p>
+                <button class="btn" data-go="replays">
+                  &#9654; START WITH REPLAYS
+                </button>
+              </div>
+              <div class="home-side">
+                <div class="vip-card">
+                  <div class="vip-top"><b>GL</b><span>VIP MEMBER</span></div>
+                  <div class="vip-chip"></div>
+                  <div class="vip-name" id="card-name">ANGEL</div>
+                  <div class="vip-bot">
+                    <span>GLVVIP #0001</span><span>VALID: FOREVER</span>
+                  </div>
+                </div>
+                <div class="quests">
+                  <h3>&#9733; QUESTS</h3>
+                  <ul>
+                    <li data-q="replays"><i></i> Watch our replays</li>
+                    <li data-q="shots"><i></i> Check the screenshots</li>
+                    <li data-q="chat"><i></i> Read the lobby chat</li>
+                    <li data-q="levelup"><i></i> Unlock the secret level</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- REPLAYS = memory videos -->
+            <section class="panel" id="replays">
+              <div class="ph-head">
+                <p class="tag">TAB 01</p>
+                <h2>REPLAYS</h2>
+                <p>Our best matches. Press play and remember.</p>
+              </div>
+              <div class="replay-layout">
+                <div class="tv" id="tv">
+                  <video
+                    id="player"
+                    playsinline
+                    controls
+                    preload="metadata"
+                    hidden
+                  ></video>
+                  <div class="tv-empty" id="tv-empty">
+                    <button class="play-big" id="play-big" aria-label="Play">
+                      &#9654;
+                    </button>
+                    <p id="tv-hint">Memory video goes here</p>
+                  </div>
+                  <span class="rec"><i></i> REC</span>
+                  <span class="tv-title" id="tv-title">MATCH 01</span>
+                  <b class="corner tl"></b><b class="corner tr"></b
+                  ><b class="corner bl"></b><b class="corner br"></b>
+                </div>
+                <ol class="matches" id="matches"></ol>
+              </div>
+            </section>
+
+            <!-- SCREENSHOTS = photos -->
+            <section class="panel" id="shots">
+              <div class="ph-head">
+                <p class="tag">TAB 02</p>
+                <h2>SCREENSHOTS</h2>
+                <p>Proof we were there. Tap to enlarge.</p>
+              </div>
+              <div class="shots" id="shot-grid"></div>
+            </section>
+
+            <!-- CHAT = messages -->
+            <section class="panel" id="chat">
+              <div class="ph-head">
+                <p class="tag">TAB 03</p>
+                <h2>LOBBY CHAT</h2>
+                <p>Your GLVVIP squad has something to say.</p>
+              </div>
+              <div class="chatbox">
+                <div class="chat-head">
+                  <span># glvvip-lobby</span
+                  ><span class="online"
+                    >&#9679; <b id="online-n">5</b> online</span
+                  >
+                </div>
+                <div class="chat-log" id="chat-log"></div>
+              </div>
+            </section>
+
+            <!-- LEVEL UP = letter -->
+            <section class="panel" id="levelup">
+              <div class="lock-msg" id="lock-msg">
+                <div class="big-lock">&#128274;</div>
+                <h2>LOCKED</h2>
+                <p>
+                  Finish the 3 quests first: Replays, Screenshots, and Lobby
+                  Chat.
+                </p>
+              </div>
+              <div class="final" id="final" hidden>
+                <div class="lvl-banner">
+                  <p class="tag">ACHIEVEMENT UNLOCKED</p>
+                  <h2>LEVEL UP!</h2>
+                  <div class="xpbar"><i></i></div>
+                  <p class="lv">
+                    BIRTHDAY LEVEL UNLOCKED &bull; THE SQUAD IS HERE
+                  </p>
+                </div>
+
+                <div class="dance-stage" id="stage2">
+                  <button class="mute" id="mute-btn" type="button">
+                    &#128263; MUSIC OFF
+                  </button>
+                  <div class="beams" aria-hidden="true"></div>
+                  <div class="ring r1" aria-hidden="true"></div>
+                  <div class="ring r2" aria-hidden="true"></div>
+                  <div class="hero">
+                    <span class="crown" aria-hidden="true">&#128081;</span>
+                    <div class="hero-glow">
+                      <div class="hero-frame">
+                        <img
+                          src="assets/avatars/angel-center.jpg"
+                          alt="Angel"
+                        />
+                      </div>
+                    </div>
+                    <div class="hero-name">
+                      ANGEL<small>BIRTHDAY BOSS</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="next-quest">
+                  <span class="nq-door" aria-hidden="true">&#128682;</span>
+                  <div>
+                    <p class="tag">NEXT QUEST</p>
+                    <p>
+                      Enter the your room. Your real surprise is waiting inside.
+                    </p>
+                  </div>
+                  <span class="nq-arrow" aria-hidden="true">&#9654;</span>
+                </div>
+
+                <div class="letter-card">
+                  <p class="tag">LAST MESSAGE</p>
+                  <p>
+                    Thank you for being you: loud, funny, kind, and always
+                    there. Every replay and screenshot in this room is proof of
+                    how lucky we are to have you in the squad. We hope this new
+                    level brings you soft days, big wins, and people who show up
+                    for you every time. Happy birthday from all of us at GLVVIP.
+                    We love you!
+                  </p>
+                  <p class="letter" id="letter"></p>
+                  <p class="sign">&mdash; your GLVVIP squad &hearts;</p>
+                  <button class="btn" id="confetti-btn">
+                    &#10024; CELEBRATE
+                  </button>
+                  <button class="link" id="restart">
+                    log out &amp; play again
+                  </button>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
-      </section>
-    </main>
-  </div>
 
-  <div class="lightbox" id="lightbox" hidden>
-    <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
-    <button class="lb-nav prev" id="lb-prev" aria-label="Previous">&lsaquo;</button>
-    <figure class="lb-fig" id="lb-fig"></figure>
-    <button class="lb-nav next" id="lb-next" aria-label="Next">&rsaquo;</button>
-  </div>
-  <div class="toast" id="toast" role="status"></div>
-  <div id="confetti" aria-hidden="true"></div>
-  <script src="script.js"></script>
-</body>
+        <div class="lightbox" id="lightbox" hidden>
+          <button class="lb-close" id="lb-close" aria-label="Close">
+            &times;
+          </button>
+          <button class="lb-nav prev" id="lb-prev" aria-label="Previous">
+            &lsaquo;
+          </button>
+          <figure class="lb-fig" id="lb-fig"></figure>
+          <button class="lb-nav next" id="lb-next" aria-label="Next">
+            &rsaquo;
+          </button>
+        </div>
+        <div class="toast" id="toast" role="status"></div>
+        <div id="confetti" aria-hidden="true"></div>
+        <script src="script.js"></script>
+      </body>
+    </html>
+  </body>
 </html>
-
-</body></html>
